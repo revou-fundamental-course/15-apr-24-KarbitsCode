@@ -8,11 +8,19 @@
     border-radius: 4px;
 }
 
-.instructions {
-    font-size: 11pt;
+.instruc-text {
+    display: block;
+    font-weight: bold;
+    font-size: 15pt;
+    margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
 }
 
-.input-text {
+.normal-text {
+    font-size: 12pt;
+}
+
+.small-text {
     font-size: 11pt;
 }
 
@@ -21,7 +29,7 @@
     color: white;
 }
 
-.revr-button {
+.rvrs-button {
     background-color: blue;
     color: white;
 }
@@ -31,3 +39,10 @@
     color: white;
 }
 
+.hiworks-text {
+    display: block;
+    font-weight: bold;
+    font-size: 12pt;
+    margin-block-start: 1em;
+    margin-block-end: 0.3em;
+}
