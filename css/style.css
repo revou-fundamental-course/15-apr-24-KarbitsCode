@@ -1,0 +1,33 @@
+.main-field {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    background-color: aqua;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+.instructions {
+    font-size: 11pt;
+}
+
+.input-text {
+    font-size: 11pt;
+}
+
+.conv-button {
+    background-color: green;
+    color: white;
+}
+
+.revr-button {
+    background-color: blue;
+    color: white;
+}
+
+.rset-button {
+    background-color: red;
+    color: white;
+}
+
