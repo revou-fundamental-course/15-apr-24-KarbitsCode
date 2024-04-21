@@ -9,7 +9,7 @@
 <body>
     <div class="main-field">
         <div>
-            <h2>Temperature Converter</h2>
+            <div class="title-text">Temperature Converter</div>
         </div>
         <div>
             <div class="instruc-text">Instruksi</div>
@@ -20,17 +20,17 @@
         </div>
         <br>
         <div>
-            <div class="small-text">Celcius (&deg;C)</div>
-            <input type="text" id="celcius-input">
+            <div class="small-text" id="temp-form1">Celcius (&deg;C)</div>
+            <input type="text" id="number-input">
             <br>
-            <button class="conv-button">&orarr;</button>
-            <button class="rvrs-button">&uarr;&darr;</button>
-            <button class="rset-button">&#88;</button>
+            <button class="conv-button" onclick="doConvert()">&orarr;</button>
+            <button class="rvrs-button" onclick="doReverse()">&uarr;&darr;</button>
+            <button class="rset-button" onclick="doReset()">&#88;</button>
         </div>
         <br>
         <div>
-            <div class="small-text">Fahrenheit (&deg;F)</div>
-            <input type="text" id="fahrenheit-input">
+            <div class="small-text" id="temp-form2">Fahrenheit (&deg;F)</div>
+            <input type="text" id="result-input" readonly>
         </div>
         <br>
         <div>
@@ -46,7 +46,6 @@
             <div class="normal-text"><big><i>S</i></big><sub>(&deg;F)</sub> = (<big><i>S</i></big><sub>(&deg;C)</sub> &times; <big>1.8</big>) + <big>32</big></div>
         </div>
     </div>
-    
     <script src="js/script.js"></script>
 </body>
 </html>
