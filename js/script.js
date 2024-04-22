@@ -1,10 +1,22 @@
 const doConvert = () => {
+    const inputText = document.getElementById("number-input")
+    const resultText = document.getElementById("result-output")
+    const formulaText = document.getElementById("calc-formula")
+    const inputLabel = document.getElementById("first-label")
 
+    if (inputLabel.textContent === "Celcius (°C)") {
+        let celcius = parseInt(inputText.value)
+        let result = (celcius * 1.8) + 32
+        let resultFormula = `(${celcius}°C * 1.8) + 32 = ${result}°F`
+        console.log(resultFormula)
+        resultText.value = result
+        formulaText.value = resultFormula
+    }
 }
 
 const doReverse = () => {
-    const curState1 = document.getElementById("temp-form1")
-    const curState2 = document.getElementById("temp-form2")
+    const curState1 = document.getElementById("first-label")
+    const curState2 = document.getElementById("second-label")
     if (curState1.textContent === "Celcius (°C)") {
         curState1.textContent = "Fahrenheit (°F)"
         curState2.textContent = "Celcius (°C)"
@@ -24,3 +36,10 @@ const doReset = () => {
     document.getElementById("calc-formula").value = ""
     console.log("Text area dibersihkan")
 }
+
+document.getElementById("number-input").addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault()
+        doConvert()
+    }
+})
