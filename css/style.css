@@ -55,6 +55,21 @@
     color: white;
 }
 
+.conv-button:hover {
+    background-color: limegreen;
+    color: white;
+}
+
+.rvrs-button:hover {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.rset-button:hover {
+    background-color: tomato;
+    color: white;
+}
+
 .conv-button:active {
     background-color: darkgreen;
     color: gray;
