@@ -84,3 +84,17 @@
     background-color: darkred;
     color: gray;
 }
+
+#number-input {
+    padding-block: 1px;
+    padding-inline: 2px;
+}
+
+#result-output {
+    resize: none;
+}
+
+#calc-formula {
+    width: 300px;
+    resize: none;
+}
