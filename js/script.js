@@ -5,18 +5,40 @@ const doConvert = () => {
     const inputLabel = document.getElementById("first-label")
 
     if (inputLabel.textContent === "Celcius (°C)") {
-        let celcius = parseInt(inputText.value)
-        let result = (celcius * 1.8) + 32
-        let resultFormula = `(${celcius}°C * 1.8) + 32 = ${result}°F`
-        console.log(resultFormula)
-        resultText.value = result
-        formulaText.value = resultFormula
+        let celcius = parseFloat(inputText.value)
+        if (!(isNaN(celcius))) {
+            let result = ((celcius * (9/5)) + 32)
+            let resultFormula = `(${celcius}°C * (9/5)) + 32 = ${result}°F`
+            console.log(resultFormula)
+            resultText.value = result
+            formulaText.value = resultFormula
+        } else {
+            resultText.value = "Error: Mohon masukan angka"
+            formulaText.value = ""
+            throw "NaN"
+        }
+    } else if (inputLabel.textContent === "Fahrenheit (°F)") {
+        let fahrenheit = parseFloat(inputText.value)
+        if (!(isNaN(fahrenheit))) {
+            let result = ((fahrenheit - 32) * (5/9))
+            let resultFormula = `(${fahrenheit}°C - 32) * (5/9) = ${result}°F`
+            console.log(resultFormula)
+            resultText.value = result
+            formulaText.value = resultFormula
+        } else {
+            resultText.value = "Error: Mohon masukan angka"
+            formulaText.value = ""
+            throw "NaN"
+        }
+    } else {
+        throw "Unknown state"
     }
 }
 
 const doReverse = () => {
     const curState1 = document.getElementById("first-label")
     const curState2 = document.getElementById("second-label")
+
     if (curState1.textContent === "Celcius (°C)") {
         curState1.textContent = "Fahrenheit (°F)"
         curState2.textContent = "Celcius (°C)"
@@ -32,7 +54,7 @@ const doReverse = () => {
 
 const doReset = () => {
     document.getElementById("number-input").value = ""
-    document.getElementById("result-input").value = ""
+    document.getElementById("result-output").value = ""
     document.getElementById("calc-formula").value = ""
     console.log("Text area dibersihkan")
 }
