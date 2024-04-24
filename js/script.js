@@ -23,7 +23,7 @@ const doConvert = () => {
             <div class="normal-text"><big><i>S</i></big><sub>(&deg;F)</sub> = (<big><i>S</i></big><sub>(&deg;C)</sub> &times; <big>9/5</big>) &plus; <big>32</big></div>`
             explanationText.style.display = "inline"
         } else {
-            resultText.value = "ERROR: Mohon masukan angka"
+            resultText.value = "Error: Mohon masukan angka"
             formulaText.value = ""
             explanationText.style.display = "none"
             console.error("ERROR: Mohon masukan angka")
@@ -43,7 +43,7 @@ const doConvert = () => {
             <div class="normal-text"><big><i>S</i></big><sub>(&deg;C)</sub> = (<big><i>S</i></big><sub>(&deg;F)</sub> &minus; <big>32</big>) &times; <big>5/9</big></div>`
             explanationText.style.display = "inline"
         } else {
-            resultText.value = "ERROR: Mohon masukan angka"
+            resultText.value = "Error: Mohon masukan angka"
             formulaText.value = ""
             explanationText.style.display = "none"
             console.error("ERROR: Mohon masukan angka")
