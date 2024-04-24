@@ -42,47 +42,47 @@
     font-size: 11pt;
 }
 
-.conv-button {
+#convert-button {
     background-color: green;
     color: white;
 }
 
-.rvrs-button {
+#reverse-button {
     background-color: blue;
     color: white;
 }
 
-.rset-button {
+#reset-button {
     background-color: red;
     color: white;
 }
 
-.conv-button:hover {
+#convert-button:hover {
     background-color: limegreen;
     color: white;
 }
 
-.rvrs-button:hover {
+#reverse-button:hover {
     background-color: dodgerblue;
     color: white;
 }
 
-.rset-button:hover {
+#reset-button:hover {
     background-color: tomato;
     color: white;
 }
 
-.conv-button:active {
+#convert-button:active {
     background-color: darkgreen;
     color: gray;
 }
 
-.rvrs-button:active {
+#reverse-button:active {
     background-color: darkblue;
     color: gray;
 }
 
-.rset-button:active {
+#reset-button:active {
     background-color: darkred;
     color: gray;
 }

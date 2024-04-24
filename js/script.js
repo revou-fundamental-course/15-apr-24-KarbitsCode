@@ -5,6 +5,9 @@ const explanationText = document.getElementById("explanation-text")
 const inputLabel = document.getElementById("first-label")
 const resultLabel = document.getElementById("second-label")
 const warnLabel = document.getElementById("warn-label")
+const convertButton = document.getElementById("convert-button")
+const reverseButton = document.getElementById("reverse-button")
+const resetButton = document.getElementById("reset-button")
 
 const doConvert = () => {
     if (inputLabel.textContent === "Celcius (°C)") {
@@ -78,6 +81,10 @@ const doReset = () => {
     console.log("INFO: Text area dibersihkan")
 }
 
+convertButton.addEventListener("click", () => doConvert())
+reverseButton.addEventListener("click", () => doReverse())
+resetButton.addEventListener("click", () => doReset())
+
 inputText.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
         event.preventDefault()
@@ -91,6 +98,8 @@ inputText.addEventListener("input", (state) => {
         warnLabel.innerHTML = "Perhatian: Input bukan angka: " + state.data
         warnLabel.style.display = "inline"
         console.warn("WARNING: Input bukan angka:", state.data)
+    } else if (state.data === null) {
+        warnLabel.style.display = "none"
     }
 })
 
@@ -108,5 +117,5 @@ window.addEventListener("load", () => {
         saveInCookies: false,
         label: "🌓",
         autoMatchOsTheme: false
-      }).showWidget()
+    }).showWidget()
 })
