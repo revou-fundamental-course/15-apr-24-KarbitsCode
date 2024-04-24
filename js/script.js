@@ -3,7 +3,6 @@ const resultText = document.getElementById("result-output")
 const formulaText = document.getElementById("calc-formula")
 const explanationText = document.getElementById("explanation-text")
 const inputLabel = document.getElementById("first-label")
-
 const curState1 = document.getElementById("first-label")
 const curState2 = document.getElementById("second-label")
 
