@@ -91,4 +91,17 @@ inputText.addEventListener("input", (state) => {
 
 window.addEventListener("load", () => {
     doReset()
+    new Darkmode({
+        bottom: "32px",
+        right: "unset",
+        left: "32px",
+        time: "0.5s",
+        mixColor: "#fff",
+        backgroundColor: "#fff",
+        buttonColorDark: "#100f2c",
+        buttonColorLight: "#fff",
+        saveInCookies: false,
+        label: "🌓",
+        autoMatchOsTheme: false
+      }).showWidget()
 })
