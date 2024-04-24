@@ -3,14 +3,14 @@ const resultText = document.getElementById("result-output")
 const formulaText = document.getElementById("calc-formula")
 const explanationText = document.getElementById("explanation-text")
 const inputLabel = document.getElementById("first-label")
-const curState1 = document.getElementById("first-label")
-const curState2 = document.getElementById("second-label")
-
+const resultLabel = document.getElementById("second-label")
+const warnLabel = document.getElementById("warn-label")
 
 const doConvert = () => {
     if (inputLabel.textContent === "Celcius (°C)") {
-        let celcius = parseFloat(inputText.value)
-        if (!(isNaN(celcius))) {
+        let celcius = inputText.value
+        if (celcius !== "" && !(isNaN(celcius))) {
+            celcius = parseFloat(celcius)
             let result = ((celcius * (9/5)) + 32)
             let resultFormula = `(${celcius}°C * (9/5)) + 32 = ${result}°F`
             console.log("INFO:", resultFormula)
@@ -29,8 +29,9 @@ const doConvert = () => {
             console.error("ERROR: Mohon masukan angka")
         }
     } else if (inputLabel.textContent === "Fahrenheit (°F)") {
-        let fahrenheit = parseFloat(inputText.value)
-        if (!(isNaN(fahrenheit))) {
+        let fahrenheit = inputText.value
+        if (celcius !== "" && !(isNaN(fahrenheit))) {
+            fahrenheit = parseFloat(fahrenheit)
             let result = ((fahrenheit - 32) * (5/9))
             let resultFormula = `(${fahrenheit}°C - 32) * (5/9) = ${result}°F`
             console.log("INFO:", resultFormula)
@@ -51,17 +52,18 @@ const doConvert = () => {
     } else {
         console.error("ERROR: Unknown state")
     }
+    warnLabel.style.display = "none"
 }
 
 const doReverse = () => {
-    if (curState1.textContent === "Celcius (°C)") {
-        curState1.textContent = "Fahrenheit (°F)"
-        curState2.textContent = "Celcius (°C)"
-        console.log("INFO: Label ditukar", curState1.textContent, "dengan", curState2.textContent)
-    } else if (curState1.textContent === "Fahrenheit (°F)") {
-        curState1.textContent = "Celcius (°C)"
-        curState2.textContent = "Fahrenheit (°F)"
-        console.log("INFO: Label ditukar", curState1.textContent, "dengan", curState2.textContent)
+    if (inputLabel.textContent === "Celcius (°C)") {
+        inputLabel.textContent = "Fahrenheit (°F)"
+        resultLabel.textContent = "Celcius (°C)"
+        console.log("INFO: Label ditukar", inputLabel.textContent, "dengan", resultLabel.textContent)
+    } else if (inputLabel.textContent === "Fahrenheit (°F)") {
+        inputLabel.textContent = "Celcius (°C)"
+        resultLabel.textContent = "Fahrenheit (°F)"
+        console.log("INFO: Label ditukar", inputLabel.textContent, "dengan", resultLabel.textContent)
     } else {
         console.error("ERROR: Unknown state")
     }
@@ -71,6 +73,7 @@ const doReset = () => {
     inputText.value = ""
     resultText.value = ""
     formulaText.value = ""
+    warnLabel.style.display = "none"
     explanationText.style.display = "none"
     console.log("INFO: Text area dibersihkan")
 }
@@ -84,7 +87,9 @@ inputText.addEventListener("keypress", (event) => {
 
 inputText.addEventListener("input", (state) => {
     let regex = /^[0-9.]+$/
-    if (!(regex.test(state.data))) {
+    if (state.data !== null && !(regex.test(state.data))) {
+        warnLabel.innerHTML = "Perhatian: Input bukan angka: " + state.data
+        warnLabel.style.display = "inline"
         console.warn("WARNING: Input bukan angka:", state.data)
     }
 })
