@@ -89,21 +89,21 @@
 
 #number-input {
     font-family: monospace;
-    font-size: medium;
+    font-size: 9.5pt;
     padding-block: 1px;
     padding-inline: 2px;
 }
 
 #result-output {
     font-family: monospace;
-    font-size: medium;
+    font-size: 9.5pt;
     width: 300px;
     resize: none;
 }
 
 #calc-formula {
     font-family: monospace;
-    font-size: medium;
+    font-size: 9.5pt;
     width: 300px;
     resize: none;
 }
