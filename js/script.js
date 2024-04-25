@@ -33,10 +33,10 @@ const doConvert = () => {
         }
     } else if (inputLabel.textContent === "Fahrenheit (°F)") {
         let fahrenheit = inputText.value
-        if (celcius !== "" && !(isNaN(fahrenheit))) {
+        if (fahrenheit !== "" && !(isNaN(fahrenheit))) {
             fahrenheit = parseFloat(fahrenheit)
             let result = ((fahrenheit - 32) * (5/9))
-            let resultFormula = `(${fahrenheit}°C - 32) * (5/9) = ${result}°F`
+            let resultFormula = `(${fahrenheit}°F - 32) * (5/9) = ${result}°C`
             console.log("INFO:", resultFormula)
             resultText.value = result
             formulaText.value = resultFormula
@@ -94,7 +94,7 @@ inputText.addEventListener("keypress", (event) => {
 
 inputText.addEventListener("input", (state) => {
     let regex = /^[0-9.]+$/
-    if (state.data !== null && !(regex.test(state.data))) {
+    if (state.data !== null && state.data !== undefined && !(regex.test(state.data))) {
         warnLabel.innerHTML = "Perhatian: Input bukan angka: " + state.data
         warnLabel.style.display = "inline"
         console.warn("WARNING: Input bukan angka:", state.data)
