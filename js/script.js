@@ -26,10 +26,10 @@ const doConvert = () => {
             <div class="normal-text"><big><i>S</i></big><sub>(&deg;F)</sub> = (<big><i>S</i></big><sub>(&deg;C)</sub> &times; <big>9/5</big>) &plus; <big>32</big></div>`
             explanationText.style.display = "inline"
         } else {
-            resultText.value = "Error: Mohon masukan angka"
+            resultText.value = "Error: Mohon masukan angka yang valid"
             formulaText.value = ""
             explanationText.style.display = "none"
-            console.error("ERROR: Mohon masukan angka")
+            console.error("ERROR: Mohon masukan angka yang valid")
         }
     } else if (inputLabel.textContent === "Fahrenheit (°F)") {
         let fahrenheit = inputText.value
@@ -47,10 +47,10 @@ const doConvert = () => {
             <div class="normal-text"><big><i>S</i></big><sub>(&deg;C)</sub> = (<big><i>S</i></big><sub>(&deg;F)</sub> &minus; <big>32</big>) &times; <big>5/9</big></div>`
             explanationText.style.display = "inline"
         } else {
-            resultText.value = "Error: Mohon masukan angka"
+            resultText.value = "Error: Mohon masukan angka yang valid"
             formulaText.value = ""
             explanationText.style.display = "none"
-            console.error("ERROR: Mohon masukan angka")
+            console.error("ERROR: Mohon masukan angka yang valid")
         }
     } else {
         console.error("ERROR: Unknown state")
@@ -114,7 +114,7 @@ window.addEventListener("load", () => {
         backgroundColor: "#fff",
         buttonColorDark: "#100f2c",
         buttonColorLight: "#fff",
-        saveInCookies: false,
+        saveInCookies: true,
         label: "🌓",
         autoMatchOsTheme: false
     }).showWidget()
