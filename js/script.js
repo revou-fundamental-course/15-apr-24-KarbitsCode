@@ -10,6 +10,7 @@ const reverseButton = document.getElementById("reverse-button")
 const resetButton = document.getElementById("reset-button")
 
 const doConvert = () => {
+    warnLabel.style.display = "none"
     if (inputLabel.textContent === "Celcius (°C)") {
         let celcius = inputText.value
         if (celcius !== "" && !(isNaN(celcius))) {
@@ -20,7 +21,7 @@ const doConvert = () => {
             resultText.value = result
             formulaText.value = resultFormula
             explanationText.innerHTML = `
-            <div class="explanation-text">Cara Kerja Konversi Suhu Celcius (°C)</div>
+            <div class="explanation-text">Cara Kerja Konversi Suhu Celcius (&deg;C)</div>
             <div class="normal-text">Suhu <big><i>S</i></big> dalam derajat Fahrenheit (&deg;F) sama dengan suhu <big><i>S</i></big> dalam derajat Celcius (&deg;C) kali <big>9/5</big> tambah <big>32</big>.</div>
             <br>
             <div class="normal-text"><big><i>S</i></big><sub>(&deg;F)</sub> = (<big><i>S</i></big><sub>(&deg;C)</sub> &times; <big>9/5</big>) &plus; <big>32</big></div>`
@@ -41,7 +42,7 @@ const doConvert = () => {
             resultText.value = result
             formulaText.value = resultFormula
             explanationText.innerHTML = `
-            <div class="explanation-text">Cara Kerja Konversi Suhu Fahrenheit (°F)</div>
+            <div class="explanation-text">Cara Kerja Konversi Suhu Fahrenheit (&deg;F)</div>
             <div class="normal-text">Suhu <big><i>S</i></big> dalam derajat Celcius (&deg;C) sama dengan suhu <big><i>S</i></big> dalam derajat Fahrenheit (&deg;F) kurang <big>32</big> dikali <big>5/9</big></div>
             <br>
             <div class="normal-text"><big><i>S</i></big><sub>(&deg;C)</sub> = (<big><i>S</i></big><sub>(&deg;F)</sub> &minus; <big>32</big>) &times; <big>5/9</big></div>`
@@ -52,10 +53,7 @@ const doConvert = () => {
             explanationText.style.display = "none"
             console.error("ERROR: Mohon masukan angka yang valid")
         }
-    } else {
-        console.error("ERROR: Unknown state")
     }
-    warnLabel.style.display = "none"
 }
 
 const doReverse = () => {
@@ -67,8 +65,6 @@ const doReverse = () => {
         inputLabel.textContent = "Celcius (°C)"
         resultLabel.textContent = "Fahrenheit (°F)"
         console.log("INFO: Label ditukar", inputLabel.textContent, "dengan", resultLabel.textContent)
-    } else {
-        console.error("ERROR: Unknown state")
     }
 }
 
@@ -98,7 +94,7 @@ inputText.addEventListener("input", (state) => {
         warnLabel.innerHTML = "Perhatian: Input bukan angka: " + state.data
         warnLabel.style.display = "inline"
         console.warn("WARNING: Input bukan angka:", state.data)
-    } else if (state.data === null) {
+    } else if (state.data === null || state.data === undefined) {
         warnLabel.style.display = "none"
     }
 })
